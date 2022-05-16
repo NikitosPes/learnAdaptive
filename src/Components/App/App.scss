@@ -1,0 +1,27 @@
+@import '../../Styles/variables';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+.main {
+    position: relative;
+    margin-top: $header-height;
+    flex: 1 1 auto;
+    padding: 0px 10px;
+    &__body {
+        margin-top: 450px;
+    }
+}
+
+@media screen and (max-width: $smartphone-screen-width) {
+    .main {
+        &__body {
+            margin-top: 270px;
+        }
+    }
+}
+

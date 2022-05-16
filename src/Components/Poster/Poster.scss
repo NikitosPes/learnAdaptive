@@ -1,0 +1,64 @@
+@import '../../Styles/variables';
+
+.poster {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 400px;
+    width: 100%;
+    &__body {
+        position: relative;
+        height: 100%;
+    }
+    &__current-item {
+        animation: 1.5s slideAnimation ease-in-out;
+        background-color:blue;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        @extend .testClassFont;
+    }
+    &__prev-item {
+        animation: 1.5s outAnimation ease-in-out;
+        background-color: red;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        @extend .testClassFont;
+    } 
+}
+
+.testClassFont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@keyframes slideAnimation {
+    from {
+        opacity: 0.5;
+        left: -80%; 
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes outAnimation {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@media screen and (max-width: $smartphone-screen-width) {
+    .poster {
+        height: 250px;
+    }
+}
